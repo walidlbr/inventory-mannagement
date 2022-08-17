@@ -5,18 +5,17 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:inventory_mannagement/categories/CategoriesP.dart';
 import 'package:inventory_mannagement/register/RegisterP.dart';
-import 'package:inventory_mannagement/signin/AdminSigninP.dart';
 
 import 'package:inventory_mannagement/signin/Userr.dart';
 
-class SignInP extends StatefulWidget {
-  const SignInP({Key? key}) : super(key: key);
+class AdminSigninP extends StatefulWidget {
+  const AdminSigninP({Key? key}) : super(key: key);
 
   @override
-  _SignInPState createState() => _SignInPState();
+  _AdminSigninPState createState() => _AdminSigninPState();
 }
 
-class _SignInPState extends State<SignInP> {
+class _AdminSigninPState extends State<AdminSigninP> {
   final _formKey = GlobalKey<FormState>();
 
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
@@ -58,7 +57,7 @@ class _SignInPState extends State<SignInP> {
                     Container(
                         margin: EdgeInsets.only(top: 10),
                         child: Text(
-                          'Please Fill the form below to continue',
+                          'Login as an admin',
                           style: TextStyle(
                               color: HexColor('#FFFFFF').withOpacity(0.5)),
                         )),
@@ -160,60 +159,11 @@ class _SignInPState extends State<SignInP> {
                                   fontWeight: FontWeight.bold,
                                 )))),
                     Container(
-                      margin: EdgeInsets.only(
-                        left: screenSize.width * 0.15,
-                        top: 20,
-                      ),
-                      child: Row(
-                        children: [
-                          Container(
-                            child: Text(
-                              "Don't have an Account !",
-                              style: TextStyle(color: Colors.white60),
-                            ),
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(left: 5),
-                            child: GestureDetector(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const RegisterP()),
-                                );
-                              },
-                              child: Text('Register',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 14,
-                                    color: HexColor('#4AB3F9').withOpacity(0.6),
-                                  )),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(top: 5),
+                      margin: EdgeInsets.only(top: 50),
                       height: 5,
                       width: 140,
                       color: HexColor('#4AB3F9').withOpacity(0.5),
                     ),
-                    Container(
-                      width: screenSize.width,
-                      child: Center(
-                        child: GestureDetector(
-                          child: Text('admin?'),
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                new MaterialPageRoute(
-                                    builder: (context) =>
-                                        Scaffold(body: new AdminSigninP())));
-                          },
-                        ),
-                      ),
-                    )
                   ],
                 ),
               ),
